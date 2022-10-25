@@ -7,6 +7,8 @@ https://movie-review-api.onrender.com
 
 Swagger
 https://movie-review-api.onrender.com/swagger-ui/index.html
+Click the swagger link until the api wakes up hosting site puts to sleep after 30min of inactivity.
+Should take 30sec to 1min to wake up.
 <br/><br/>
 
 ### EXTERNAL API
