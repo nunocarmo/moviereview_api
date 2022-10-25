@@ -2,8 +2,11 @@
 ***
 
 ### API LINK
+https://movie-review-api.onrender.com
 ***
-https://moviereview-api.herokuapp.com/swagger-ui/index.html
+
+Swagger
+https://movie-review-api.onrender.com/swagger-ui/index.html
 <br/><br/>
 
 ### EXTERNAL API
