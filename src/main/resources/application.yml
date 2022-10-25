@@ -14,7 +14,7 @@ spring:
       show-sql: true
   datasource:
     platform: postgres
-    url: ${POSTGRES_URL:jdbc:postgres://stsxddtq:CffTTQQgV1oVoMl04pOGIWGPhOwbzC4H@lucky.db.elephantsql.com/stsxddtq}
+    url: ${POSTGRES_URL:jdbc:postgresql://lucky.db.elephantsql.com:5432/stsxddtq}
     username: ${POSTGRES_USERNAME:stsxddtq}
     password: ${POSTGRES_PASSWORD:CffTTQQgV1oVoMl04pOGIWGPhOwbzC4H}
     driverClassName: org.postgresql.Driver
