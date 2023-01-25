@@ -9,9 +9,9 @@ spring:
     redis:
       time-to-live: 600000
   redis:
-    host: ${REDIS_URL}
+    host: redis-10378.c250.eu-central-1-1.ec2.cloud.redislabs.com
     password: ${REDIS_PASS}
-    port: ${REDIS_PORT}
+    port: 10378
 
   jpa:
     database: POSTGRESQL
