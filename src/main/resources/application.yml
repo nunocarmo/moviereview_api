@@ -6,15 +6,13 @@ spring:
     ansi:
       enabled: ALWAYS
   jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: ${HIBERNATE_DDL_AUTO:update}
-      show-sql: true
+   database: POSTGRESQL
+   database-platform: org.hibernate.dialect.PostgreSQLDialect
+   show-sql: false
+   hibernate:
+      ddl-auto: update
   datasource:
-    platform: postgres
-    url: ${POSTGRES_URL:jdbc:postgresql://lucky.db.elephantsql.com:5432/stsxddtq}
-    username: ${POSTGRES_USERNAME:stsxddtq}
-    password: ${POSTGRES_PASSWORD:CffTTQQgV1oVoMl04pOGIWGPhOwbzC4H}
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/test}
+    username: ${POSTGRES_USERNAME:user}
+    password: ${POSTGRES_PASSWORD:pass}
     driverClassName: org.postgresql.Driver
