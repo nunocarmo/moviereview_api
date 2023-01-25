@@ -1,18 +1,3 @@
-server:
-  port: ${PORT:8080}
-
 spring:
-  output:
-    ansi:
-      enabled: ALWAYS
-  jpa:
-   database: POSTGRESQL
-   database-platform: org.hibernate.dialect.PostgreSQLDialect
-   show-sql: false
-   hibernate:
-      ddl-auto: update
-  datasource:
-    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/test}
-    username: ${POSTGRES_USERNAME:user}
-    password: ${POSTGRES_PASSWORD:pass}
-    driverClassName: org.postgresql.Driver
+  profiles:
+    active: prod

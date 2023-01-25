@@ -81,7 +81,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 // Generic get call
                 .antMatchers(HttpMethod.GET, "/api/v1/**").hasAnyRole("ADMIN", "USER")
                 //Swagger page
-                .antMatchers("/v2/api-docs", "/swagger-resources", "/swagger-resources/**",
+                .antMatchers("/actuator","/actuator/**","/v2/api-docs", "/swagger-resources", "/swagger-resources/**",
                         "/configuration/ui", "/configuration/security", "/swagger-ui.html",
                         "/webjars/**", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
                 .anyRequest().authenticated()

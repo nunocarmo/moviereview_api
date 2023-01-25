@@ -59,54 +59,54 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
 
         // review
-        List<Rating> ratingList = new ArrayList<>(Arrays.asList(
-                Rating.builder().rate("★✰✰✰✰").build(),
-                Rating.builder().rate("★★✰✰✰").build(),
-                Rating.builder().rate("★★★✰✰").build(),
-                Rating.builder().rate("★★★★✰").build(),
-                Rating.builder().rate("★★★★★").build()));
-        // user
-        List<Role> roleList = new ArrayList<>(Arrays.asList(
-                        Role.builder().roleName("USER").build(),
-                        Role.builder().roleName("ADMIN").build()));
-        List<User> userList = new ArrayList<>(List.of(
-                User.builder().roleId(roleList.get(1)).firstName("João").lastName("Silva").email("joao@email.com")
-                        .dateOfBirth(LocalDate.parse("1998-08-03")).dateOfAccountCreation(LocalDate.now())
-                        .password(encoder.encode("palavrapass")).build(),
-                User.builder().roleId(roleList.get(1)).firstName("Luis").lastName("Couto").email("luis@email.com")
-                        .dateOfBirth(LocalDate.parse("1980-09-07")).dateOfAccountCreation(LocalDate.now())
-                        .password(encoder.encode("palavrapass")).build(),
-                User.builder().roleId(roleList.get(1)).firstName("Nuno").lastName("Carmo").email("nuno@email.com")
-                        .dateOfBirth(LocalDate.parse("1970-09-07")).dateOfAccountCreation(LocalDate.now())
-                        .password(encoder.encode("palavrapass")).build()));
-
-        addRating(ratingList);
-        addRoles(roleList);
-        addUsers(userList);
-
-
-        clearCache();
-        try {
-            MovieList movieListId = restTemplate.getForObject("https://imdb-api.com/en/API/Top250Movies/" + getKey(), MovieList.class);
-            for (int i = 0; i < 5; i++) {
-                MovieApiDto movieDto = restTemplate.getForObject("https://imdb-api.com/en/API/Title/" + getKey() + "/" + movieListId.getItems().get(i).getId(), MovieApiDto.class);
-                Movie movie = this.movieConverter.converter(movieDto, Movie.class);
-                List<Director> newDirectorList = new ArrayList<>();
-                List<Writer> newWriterList = new ArrayList<>();
-                List<Actor> newActorList = new ArrayList<>();
-                List<Genre> newGenreList = new ArrayList<>();
-                addDirectors(movie, newDirectorList);
-                addWriters(movie, newWriterList);
-                addActors(movie, newActorList);
-                addGenre(movie, newGenreList);
-                movie.setGenreList(newGenreList);
-                movie.setActorList(newActorList);
-                movie.setWriterList(newWriterList);
-                movie.setDirectorList(newDirectorList);
-                addMovie(movie);
-            }
-        } catch (Exception ignored) {
-        }
+//        List<Rating> ratingList = new ArrayList<>(Arrays.asList(
+//                Rating.builder().rate("★✰✰✰✰").build(),
+//                Rating.builder().rate("★★✰✰✰").build(),
+//                Rating.builder().rate("★★★✰✰").build(),
+//                Rating.builder().rate("★★★★✰").build(),
+//                Rating.builder().rate("★★★★★").build()));
+//        // user
+//        List<Role> roleList = new ArrayList<>(Arrays.asList(
+//                        Role.builder().roleName("USER").build(),
+//                        Role.builder().roleName("ADMIN").build()));
+//        List<User> userList = new ArrayList<>(List.of(
+//                User.builder().roleId(roleList.get(1)).firstName("João").lastName("Silva").email("joao@email.com")
+//                        .dateOfBirth(LocalDate.parse("1998-08-03")).dateOfAccountCreation(LocalDate.now())
+//                        .password(encoder.encode("palavrapass")).build(),
+//                User.builder().roleId(roleList.get(1)).firstName("Luis").lastName("Couto").email("luis@email.com")
+//                        .dateOfBirth(LocalDate.parse("1980-09-07")).dateOfAccountCreation(LocalDate.now())
+//                        .password(encoder.encode("palavrapass")).build(),
+//                User.builder().roleId(roleList.get(1)).firstName("Nuno").lastName("Carmo").email("nuno@email.com")
+//                        .dateOfBirth(LocalDate.parse("1970-09-07")).dateOfAccountCreation(LocalDate.now())
+//                        .password(encoder.encode("palavrapass")).build()));
+//
+//        addRating(ratingList);
+//        addRoles(roleList);
+//        addUsers(userList);
+//
+//
+//        clearCache();
+//        try {
+//            MovieList movieListId = restTemplate.getForObject("https://imdb-api.com/en/API/Top250Movies/" + getKey(), MovieList.class);
+//            for (int i = 0; i < 5; i++) {
+//                MovieApiDto movieDto = restTemplate.getForObject("https://imdb-api.com/en/API/Title/" + getKey() + "/" + movieListId.getItems().get(i).getId(), MovieApiDto.class);
+//                Movie movie = this.movieConverter.converter(movieDto, Movie.class);
+//                List<Director> newDirectorList = new ArrayList<>();
+//                List<Writer> newWriterList = new ArrayList<>();
+//                List<Actor> newActorList = new ArrayList<>();
+//                List<Genre> newGenreList = new ArrayList<>();
+//                addDirectors(movie, newDirectorList);
+//                addWriters(movie, newWriterList);
+//                addActors(movie, newActorList);
+//                addGenre(movie, newGenreList);
+//                movie.setGenreList(newGenreList);
+//                movie.setActorList(newActorList);
+//                movie.setWriterList(newWriterList);
+//                movie.setDirectorList(newDirectorList);
+//                addMovie(movie);
+//            }
+//        } catch (Exception ignored) {
+//        }
     }
 
     private void addRating(List<Rating> ratingList) {
