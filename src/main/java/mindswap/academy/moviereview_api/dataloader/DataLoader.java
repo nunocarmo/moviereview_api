@@ -58,7 +58,7 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-//         review
+        //review
         List<Rating> ratingList = new ArrayList<>(Arrays.asList(
                 Rating.builder().rate("★✰✰✰✰").build(),
                 Rating.builder().rate("★★✰✰✰").build(),
@@ -84,8 +84,6 @@ public class DataLoader implements ApplicationRunner {
         addRoles(roleList);
         addUsers(userList);
 
-
-        clearCache();
         try {
             MovieList movieListId = restTemplate.getForObject("https://imdb-api.com/en/API/Top250Movies/" + getKey(), MovieList.class);
             for (int i = 0; i < 5; i++) {
