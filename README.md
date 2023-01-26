@@ -2,11 +2,11 @@
 ***
 
 ### API LINK
-https://movie-review-api.onrender.com
+https://moviereviewapi-production.up.railway.app
 ***
 
 Swagger
-https://movie-review-api.onrender.com/swagger-ui/index.html <br/>
+https://moviereviewapi-production.up.railway.app/swagger-ui/index.html <br/>
 Click the swagger link until the api wakes up hosting site puts to sleep after 30min of inactivity. <br/>
 Should take 30sec to 1min to wake up.
 <br/><br/>
